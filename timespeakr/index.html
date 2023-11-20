@@ -1,0 +1,56 @@
+<body style="background-color: #000;">
+  <h2 onclick="mobile()" style=" background-color: #fcf400; "><i><b><center>NEXUSSNARL</center><b></i></h2>
+  <br><br>
+  <div class="timeSpeak">
+          <p style="font-size: 16px;"><b>TIME SPEAKr</b></p>
+
+          <p style="font-size: 12px;">On every hour the software sent out a voice message with the time followed by
+            "portsmouth jig". <code>portsmouth_in_action</code> is the original version live on frequency twice. </p>
+
+          <audio id="timeSpeakPlayer" controls="controls">
+            <source id="player" src="timeSpeaker/portsmouth_in_action.wav">
+          </audio>
+          <br><br>
+          <select id="timeSpeakSound"
+            style="font-size: 16; background-color: #262626; color: #fff; border-radius: 1px;">
+            <option>portsmouth_in_action</option>
+            <option>portsmouth_raw</option>
+            <option disabled>Unused Prototypes</option>
+            <option>jingle_2</option>
+            <option>posh-portsmouth</option>
+          </select>
+          <br>
+          <br>
+          <a class="send" onclick="timeSpeakSelect()">PLAY SOUND</a>
+          <br>
+          <br>
+
+      </div>
+</body>
+
+<script>
+  function timeSpeakSelect() {
+      var e = document.getElementById('timeSpeakSound')
+      var text = e.options[e.selectedIndex].text;
+      var audio = document.getElementById('timeSpeakPlayer');
+      audio.src = 'timeSpeaker/' + text + '.wav';
+      audio.load();
+      audio.play();
+    }
+</script>
+
+<style>
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      font-family: "Arial", "Arial", monospace;
+    }
+    .timeSpeak {
+      color: #fff;
+      border: 2px solid #6832a8;
+      border-radius: 4px;
+      margin-inline: 3%;
+      padding-inline: 3%;
+    }
+</style>
